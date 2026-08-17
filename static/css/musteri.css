@@ -44,12 +44,44 @@ header {
 }
 
 .logo h1 {
-    margin: 5px 0 0 0;
+    margin: 0;
     font-size: 48px;
 }
 
 .logo p {
-    margin-top: 10px;
+    margin: 0;
 }
 
 /* ------------------------- MAIN ----------------------------*/
+
+.kategoriler-nav nav {
+    background-color: var(--acik-krem);
+    display: flex;
+    justify-content: center;
+
+    border: 1px solid var(--turuncu);
+    border-radius: 50px;
+    margin: 30px 32% 0 32%;
+    height: 72px;
+}
+
+.kategoriler-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.kategoriler-nav li {
+    font-size: 18px;
+    transition: transform .18s ease, color .18s ease;
+}
+
+.kategoriler-nav li:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color: var(--turuncu);
+}
