@@ -17,13 +17,13 @@ h1, h2, h3 {
 body {
     box-sizing: border-box;
     margin: 0;
-    background-color: var(--koyu);
+    background-color: black;
     font-family: var(--font-govde);
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* ------------------------- HEADER ----------------------------*/
+/* ------------------------- HEADER ---------------------------- */
 
 header {
     width: 100%;
@@ -35,26 +35,34 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .logo img {
     height: 20rem;
     width: auto;
     margin: 0;
+    border-radius: 100%;
+    border: 1px solid var(--koyu);
+    box-shadow: 0 0 1000px 5px var(--koyu);
 }
 
 .logo h1 {
     margin: 0;
     font-size: 48px;
+    color: var(--turuncu);
 }
 
 .logo p {
     margin: 0;
+    color: var(--amber);
 }
 
-/* ------------------------- MAIN ----------------------------*/
+/* ------------------------- MAIN ---------------------------- */
 
-.kategoriler-nav nav {
+/* -------------- NAV -------------- */
+
+.categories-nav nav {
     background-color: var(--acik-krem);
     display: flex;
     justify-content: center;
@@ -63,9 +71,10 @@ header {
     border-radius: 50px;
     margin: 30px 32% 0 32%;
     height: 72px;
+    box-shadow: 0 0 20px 2px var(--turuncu);
 }
 
-.kategoriler-nav ul {
+.categories-nav ul {
     list-style: none;
     display: flex;
     gap: 40px;
@@ -75,13 +84,67 @@ header {
     padding: 0;
 }
 
-.kategoriler-nav li {
+.categories-nav li {
     font-size: 18px;
     transition: transform .18s ease, color .18s ease;
 }
 
-.kategoriler-nav li:hover {
+.categories-nav li:hover {
     cursor: pointer;
     transform: scale(1.2);
     color: var(--turuncu);
+}
+
+/* -------------- CARDS -------------- */
+
+.categories-cards {
+    background-color: var(--koyu);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px 200px;
+    border: 2px solid var(--turuncu);
+    border-radius: 50px;
+    box-shadow: 0 0 20px 5px var(--turuncu);
+}
+
+.card {
+    height: 300px;
+    margin: 30px 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, .4);
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.6);
+    transition: box-shadow .18s;
+}
+
+.card p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, .6);
+    color: var(--amber);
+    margin: 0;
+    padding: 20px 0;
+    border-radius: 0;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .25s;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover img {
+    transform: scale(1.08);
 }
