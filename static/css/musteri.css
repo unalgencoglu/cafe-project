@@ -1,0 +1,55 @@
+:root {
+    --turuncu: #EA580C;
+    --amber: #D97706;
+    --koyu: #7C2D12;
+    --krem: #FFEDD5;
+    --acik-krem: #FEF3E2;
+
+    --font-baslik: 'Playfair Display', Georgia, serif;
+    --font-govde: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-baslik);
+    font-weight: 700;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--koyu);
+    font-family: var(--font-govde);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ------------------------- HEADER ----------------------------*/
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    height: 20rem;
+    width: auto;
+    margin: 0;
+}
+
+.logo h1 {
+    margin: 5px 0 0 0;
+    font-size: 48px;
+}
+
+.logo p {
+    margin-top: 10px;
+}
+
+/* ------------------------- MAIN ----------------------------*/
