@@ -17,7 +17,7 @@ h1, h2, h3 {
 body {
     box-sizing: border-box;
     margin: 0;
-    background-color: black;
+    background-color: #1A0F0A;
     font-family: var(--font-govde);
     font-size: 16px;
     line-height: 1.6;
@@ -69,7 +69,7 @@ header {
 
     border: 1px solid var(--turuncu);
     border-radius: 50px;
-    margin: 30px 32% 0 32%;
+    margin: 30px 28% 0 28%;
     height: 72px;
     box-shadow: 0 0 20px 2px var(--turuncu);
 }
@@ -100,7 +100,7 @@ header {
 .categories-cards {
     background-color: var(--koyu);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin: 30px 200px;
     border: 2px solid var(--turuncu);
     border-radius: 50px;
@@ -125,7 +125,7 @@ header {
     text-align: center;
     font-size: 24px;
     font-weight: 600;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(26, 15, 10, .85);
     color: var(--amber);
     margin: 0;
     padding: 20px 0;
@@ -147,4 +147,27 @@ header {
 
 .card:hover img {
     transform: scale(1.08);
+}
+
+/* -------------- CUSTOMER ID -------------- */
+
+.customer-id {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+    top: 10px;
+    left: 10px;
+
+    background-color: var(--koyu);
+    border: none;
+    border-radius: 15px;
+    height: auto;
+    width: 72px;
+    padding: 20px;
+}
+
+.customer-id h1 {
+    color: var(--amber);
+    text-align: center;
 }
