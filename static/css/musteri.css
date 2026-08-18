@@ -1,9 +1,13 @@
 :root {
-    --turuncu: #EA580C;
-    --amber: #D97706;
     --koyu: #7C2D12;
+    --koyu-2: #9A3412;
+    --turuncu: #EA580C;
+    --turuncu-acik: #F97316;
+    --amber: #D97706;
+    --amber-acik: #B45309;
     --krem: #FFEDD5;
     --acik-krem: #FEF3E2;
+    --zemin: #1A0F0A;
 
     --font-baslik: 'Playfair Display', Georgia, serif;
     --font-govde: 'Inter', system-ui, sans-serif;
@@ -25,7 +29,7 @@ body {
 
 /* ------------------------- HEADER ---------------------------- */
 
-header {
+.menu-header {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -162,12 +166,97 @@ header {
     background-color: var(--koyu);
     border: none;
     border-radius: 15px;
-    height: auto;
-    width: 72px;
-    padding: 20px;
+    padding: 0 25px;
 }
 
 .customer-id h1 {
     color: var(--amber);
     text-align: center;
+}
+
+/* ------------------------- SIPARISLER ---------------------------- */
+
+.siparis-header {
+    background: linear-gradient(100deg, #FFEDD5, #FEF3E2);
+    margin: 10px 30% 5px 30%;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.siparis-header h1 {
+    color: var(--amber);
+}
+
+.siparisler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 50px;
+    margin: 15px 10% 0 10%;
+    background: var(--acik-krem);
+    border-radius: 20px;
+}
+
+.siparisler-table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    width: 25%;
+    background: var(--koyu);
+    color: var(--krem);
+    text-align: left;
+    padding: 12px;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+tbody tr:hover {
+    background: var(--acik-krem);
+}
+
+tfoot td {
+    padding: 12px;
+}
+
+.done {
+    color: green;
+}
+
+.undone {
+    color: red;
+}
+
+.siparis-footer {
+    transition: background .18s ease, transform .18s;
+}
+
+.siparis-footer a {
+    background: var(--amber);
+    padding: 20px;
+    border-radius: 15px;
+    color: var(--acik-krem);
+    font-weight: 600;
+}
+
+.siparis-footer:hover {
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
