@@ -76,7 +76,9 @@ body::after {
     opacity: 0.6;
 }
 
-.uzay {
+/* ------------------------- ARKAPLAN ---------------------------- */
+
+.space {
     position: fixed;
     inset: 0;
     z-index: -1;
@@ -149,4 +151,60 @@ body::after {
 .ring-front {
     z-index: 3;
     clip-path: inset(50% 0 0 0);
+}
+
+/* ------------------------- HEADER ---------------------------- */
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 900px;
+    margin: 28px auto 0;
+}
+
+.header-container h1 {
+    color: var(--yazi);
+    font-size: clamp(16px, 2.4vw, 26px);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.header-first {
+    justify-content: flex-end;
+    padding-right: 90px;
+    border-radius: 90px 12px 12px 90px;
+    mask-image: radial-gradient(circle 70px at 100% 50%, transparent 70px, #000 71px);
+}
+
+.header-second {
+    justify-content: flex-start;
+    padding-left: 90px;
+    border-radius: 12px 90px 90px 12px;
+    mask-image: radial-gradient(circle 70px at 0% 50%, transparent 70px, #000 71px);
+}
+
+.header-first,
+.header-second {
+    background-color: var(--cam);
+    border: 1px solid var(--cam-kenar);
+    flex: 1;
+    height: 92px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.header-logo img {
+    width: 144px;
+    display: block;
 }
