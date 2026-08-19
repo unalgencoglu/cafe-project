@@ -1,16 +1,30 @@
 :root {
-    --koyu: #7C2D12;
-    --koyu-2: #9A3412;
-    --turuncu: #EA580C;
-    --turuncu-acik: #F97316;
-    --amber: #D97706;
-    --amber-acik: #B45309;
-    --krem: #FFEDD5;
-    --acik-krem: #FEF3E2;
-    --zemin: #1A0F0A;
+    /* zemin renkleri */
+    --uzay-1: #0B0713;
+    --uzay-2: #14101F;
+    --uzay-3: #1E1526;
 
-    --font-baslik: 'Playfair Display', Georgia, serif;
-    --font-govde: 'Inter', system-ui, sans-serif;
+    /* vurgu - turuncular */
+    --turuncu: #FF7A2F;
+    --turuncu-koyu: #EA580C;
+    --amber: #FBBF24;
+    --amber-koyu: #D97706;
+
+    /* paneller */
+    --cam: rgba(255, 237, 213, 0.08);
+    --cam-koyu: rgba(255, 237, 213, 0.05);
+    --cam-hover: rgba(255, 237, 213, 0.14);
+    --cam-kenar: rgba(255, 237, 213, 0.18);
+    --cam-kenar-vurgu: rgba(255, 122, 47, 0.35);
+
+    /* metin */
+    --yazi: #FFF7ED;
+    --yazi-2: rgba(255, 247, 237, 0.72);
+    --yazi-3: rgba(255, 247, 237, 0.45);
+
+    /* yıldızlar */
+    --yildiz: #FFF7ED;
+    --yildiz-sonuk: rgba(255, 247, 237, 0.35);
 }
 
 h1, h2, h3 {
