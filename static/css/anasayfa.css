@@ -208,3 +208,81 @@ body::after {
     width: 144px;
     display: block;
 }
+
+/* ------------------------- MAIN ---------------------------- */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.content {
+    background-color: var(--cam);
+    border: 1px solid var(--cam-kenar);
+    border-radius: 12px;
+}
+
+.content p {
+    color: var(--yazi);
+    margin: 0;
+    font-size: 18px;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--amber);
+    font-size: 36px;
+    margin: 0;
+}
+
+.box h2 {
+    color: var(--amber);
+    margin-top: 10px;
+}
+
+.box {
+    margin: 10px 24px;
+    padding: 12px 36px;
+    border: 2px solid var(--cam-koyu);
+    border-radius: 12px;
+    background-color: var(--cam);
+}
+
+.box:hover {
+    background-color: var(--cam-hover);
+}
+
+.rule-list {
+    list-style: none;
+    color: var(--yazi);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.rule-list-item {
+    border: 2px solid var(--cam-kenar-vurgu);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+span {
+    color: var(--yazi);
+    font-size: 18px;
+}
+
+.hour-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+.line {
+    flex: 1;
+    border-bottom: 1px dashed var(--cam-kenar);
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
