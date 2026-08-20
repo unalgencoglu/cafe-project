@@ -6,7 +6,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../static/css/anasayfa.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/anasayfa.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="header-logo">
-                <img src="../../static/img/rasathane_amblem.png">
+                <img src="{{ url_for('static', filename='img/rasathane_amblem.png')}}">
             </div>
 
             <div class="header-second">
