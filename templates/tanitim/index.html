@@ -7,6 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../static/css/anasayfa.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="space">
@@ -45,13 +48,6 @@
                 </section>
 
                 <section class="box">
-                        <a href="#">
-                            Menü
-                        </a>
-                        <p>Menüye bir göz atın</p>
-                </section>
-
-                <section class="box">
                     <h2>Kurallar</h2>
                     <div class="rules">
                         <ul class="rule-list">
@@ -82,7 +78,142 @@
                         </div>
                     </div>
                 </section>
+
+                <section class="menu-box">
+                    <h1>Menü</h1>
+                    <div class="menu-category">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="menu-img"><img src="../../static/img/anayemek.webp"></span>
+                                <span>Ana yemekler</span>
+                            </div>
+                            <div class="products">
+                                <div class="product-row">
+                                    <span>Süpernova</span>
+                                    <i class="line"></i>
+                                    <span>320 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Kızıl Gezegen</span>
+                                    <i class="line"></i>
+                                    <span>340 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Halka Sistemi</span>
+                                    <i class="line"></i>
+                                    <span>360 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Karadelik</span>
+                                    <i class="line"></i>
+                                    <span>380 ₺</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="menu-img"><img src="../../static/img/arayemekler.webp"></span>
+                                <span>Ara yemekler</span>
+                            </div>
+                            <div class="products">
+                                <div class="product-row">
+                                    <span>Meteor Yağmuru</span>
+                                    <i class="line"></i>
+                                    <span>160₺</span>
+                                </div> 
+                                <div class="product-row">
+                                    <span>Asteroit Kuşağı</span>
+                                    <i class="line"></i>
+                                    <span>180 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Uydu</span>
+                                    <i class="line"></i>
+                                    <span>140 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Toz Bulutu</span>
+                                    <i class="line"></i>
+                                    <span>150 ₺</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="menu-img"><img src="../../static/img/sogukicecekler.webp"></span>
+                                <span>Soğuk içecekler</span>
+                            </div>
+                            <div class="products">
+                                <div class="product-row">
+                                    <span>Buz Devi</span>
+                                    <i class="line"></i>
+                                    <span>110 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Neptün</span>
+                                    <i class="line"></i>
+                                    <span>105 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Kuzey Işıkları</span>
+                                    <i class="line"></i>
+                                    <span>115 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Nebula</span>
+                                    <i class="line"></i>
+                                    <span>140 ₺</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <span class="menu-img"><img src="../../static/img/sicakicecekler.jpg"></span>
+                                <span>Sıcak içecekler</span>
+                            </div>
+                            <div class="products">
+                                <div class="product-row">
+                                    <span>Güneş</span>
+                                    <i class="line"></i>
+                                    <span>95 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Merkür</span>
+                                    <i class="line"></i>
+                                    <span>85 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Ay Işığı</span>
+                                    <i class="line"></i>
+                                    <span>120 ₺</span>
+                                </div>
+                                <div class="product-row">
+                                    <span>Samanyolu</span>
+                                    <i class="line"></i>
+                                    <span>145 ₺</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="menu-box">
+
+                </section>
             </div>
         </main>
+        <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const kutu = item.parentElement;
+                const acikMi = kutu.classList.contains('open');
+                document.querySelectorAll('.menu-items').forEach(k => k.classList.remove('open'));
+                if (!acikMi) kutu.classList.add('open');
+            });
+        });
+        </script>
     </body>
 </html>
