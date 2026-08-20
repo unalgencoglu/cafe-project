@@ -250,7 +250,7 @@ main {
 
 .box,
 .menu-box,
-.rotater-box {
+.info-box {
     margin: 10px 24px;
     padding: 12px 36px;
     border: 2px solid var(--cam-koyu);
@@ -295,7 +295,7 @@ span {
     margin-bottom: 10px;
 }
 
-/* ------------------------- MAIN ---------------------------- */
+/* ------------------------- MENU ---------------------------- */
 
 .menu-items {
     border: 1px solid var(--cam-kenar-vurgu);
@@ -369,4 +369,38 @@ span {
 
 .product-row:last-child {
     padding-bottom: 16px;
+}
+
+/* ------------------------- MAP ---------------------------- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.map-box {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--cam-kenar);
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    display: block;
+    filter: grayscale(0.3) brightness(0.85);
+}
+
+.info-box h2 {
+    color: var(--amber);
 }
