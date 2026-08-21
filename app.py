@@ -1,5 +1,5 @@
 from flask import Flask, render_template, abort, make_response, request, redirect, url_for
-from db import sorgula, calistir
+from db import sorgula, calistir, sonraki_kod
 import uuid
 
 app = Flask(__name__)
@@ -54,7 +54,23 @@ def masa_giris(token):
             (cihaz_token,), tek=True
         )
         
-    return f"Masa: {masa['masa_kodu']} ({masa['bolge']})"
+    if not musteri:
+        cihaz_token = str(uuid.uuid4())
+        kod = sonraki_kod()
+        musteri_id = calistir("""
+            INSERT INTO musteriler (cihaz_token, musteri_kodu, adisyon_id, son_masa_id)
+            VALUES (%s, %s, %s, %s)
+        """, (cihaz_token, kod, adisyon_id, masa["id"]))
+    else:
+        calistir("""
+            UPDATE musteriler
+            SET adisyon_id = %s, son_masa_id = %s, son_gorulme = NOW()
+            WHERE id = %s   
+        """, (adisyon_id, masa["id"], musteri["id"]))
+        
+    yanit = make_response(redirect(url_for("siparis")))
+    yanit.set_cookie("cihaz_token", cihaz_token, max_age=8 * 60 * 60)
+    return yanit
 
 if __name__ == "__main__":
     app.run(debug=True)
