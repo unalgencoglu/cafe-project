@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from db import sorgula
 
 app = Flask(__name__)
@@ -22,6 +22,18 @@ def anasayfa():
                                       """, (kategori["id"],))
     
     return render_template("tanitim/index.html", kategoriler=kategoriler)
+
+@app.route("/masa/<token>")
+def masa_giris(token):
+    masa = sorgula(
+        "SELECT id, masa_kodu, bolge FROM masalar WHERE qr_token = %s AND aktif = 1",
+        (token,), tek=True
+    )
+    
+    if not masa:
+        abort(404)
+        
+    return f"Masa: {masa['masa_kodu']} ({masa['bolge']})"
 
 if __name__ == "__main__":
     app.run(debug=True)
