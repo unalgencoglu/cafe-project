@@ -1,5 +1,6 @@
-from flask import Flask, render_template, abort
-from db import sorgula
+from flask import Flask, render_template, abort, make_response, request, redirect, url_for
+from db import sorgula, calistir
+import uuid
 
 app = Flask(__name__)
 
@@ -32,6 +33,26 @@ def masa_giris(token):
     
     if not masa:
         abort(404)
+        
+    adisyon = sorgula(
+        "SELECT id FROM adisyonlar WHERE masa_id = %s AND durum = 'acik'",
+        (masa["id"],), tek=True
+    )
+    
+    if not adisyon:
+        adisyon_id = calistir(
+            "INSERT INTO adisyonlar (masa_id) VALUES (%s)", (masa["id"],)
+        )
+    else:
+        adisyon_id = adisyon["id"]
+        
+    cihaz_token = request.cookies.get("cihaz_token")
+    musteri = None
+    if cihaz_token:
+        musteri = sorgula(
+            "SELECT id, musteri_kodu FROM musteriler WHERE cihaz_token = %s",
+            (cihaz_token,), tek=True
+        )
         
     return f"Masa: {masa['masa_kodu']} ({masa['bolge']})"
 
