@@ -72,5 +72,9 @@ def masa_giris(token):
     yanit.set_cookie("cihaz_token", cihaz_token, max_age=8 * 60 * 60)
     return yanit
 
+@app.route("/siparis")
+def siparis():
+    return "Sipariş sayfası"
+
 if __name__ == "__main__":
     app.run(debug=True)
