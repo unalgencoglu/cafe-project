@@ -12,3 +12,19 @@ def sorgula(sql, params=None, tek=False):
     c.close()
     b.close()
     return sonuc
+
+def sonraki_kod():
+    son = sorgula(
+        "SELECT musteri_kodu FROM musteriler ORDER BY id DESC LIMIT 1",
+        tek=True
+    )
+    
+    if not son:
+        return "A1"
+    
+    harf = son["musteri_kodu"][0]
+    sayi = int(son["musteri_kodu"][1:])
+    
+    if sayi < 99:
+        return f"{harf}{sayi + 1}"
+    return f"{chr(ord(harf) + 1)}1"
