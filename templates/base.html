@@ -3,16 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>{% block title %}Rasathane{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/musteri.css') }}">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        {% block css %}{% endblock %}
     </head>
     <body>
-        {% block icerik %} {% endblock %}
+        <div class="space">
+            <span class="planet p1"></span>
+            <span class="planet p2"></span>
+            <span class="planet p3">
+                <i class="ring-back"></i>
+                <i class="sphere"></i>
+                <i class="ring-front"></i>
+            </span>
+        </div>
+
+        {% block content %}{% endblock %}
+
+        {% block js %}{% endblock %}
     </body>
 </html>
