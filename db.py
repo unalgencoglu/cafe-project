@@ -13,6 +13,16 @@ def sorgula(sql, params=None, tek=False):
     b.close()
     return sonuc
 
+def calistir(sql, params=None):
+    b = baglanti_al()
+    c = b.cursor()
+    c.execute(sql, params or ())
+    b.commit()
+    son_id = c.lastrowid
+    c.close()
+    b.close()
+    return son_id
+
 def sonraki_kod():
     son = sorgula(
         "SELECT musteri_kodu FROM musteriler ORDER BY id DESC LIMIT 1",
